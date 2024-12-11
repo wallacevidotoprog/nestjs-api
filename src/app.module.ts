@@ -1,21 +1,23 @@
-/* eslint-disable prettier/prettier */
-import { Module } from "@nestjs/common";
-import { ConfigModule } from "@nestjs/config";
-import { AppController } from "./app.controller";
-import { AppService } from "./app.service";
-import { MapsModule } from "./maps/maps.module";
-import { PlacesController } from "./maps/places/places.controller";
-import { PrismaModule } from "./prisma/prisma.module";
-import { RoutesModule } from "./routes/routes.module";
+import { Module } from '@nestjs/common';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+import { MapsModule } from './maps/maps.module';
+import { ConfigModule } from '@nestjs/config';
+import { RoutesModule } from './routes/routes.module';
+import { PrismaModule } from './prisma/prisma.module';
 
 @Module({
   imports: [
-    MapsModule,
-    ConfigModule.forRoot({ isGlobal: true }),
-    RoutesModule,
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
     PrismaModule,
+    MapsModule,
+    RoutesModule,
   ],
-  controllers: [AppController, PlacesController],
+  controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
+
+//container de serviços

@@ -1,9 +1,7 @@
-/* eslint-disable prettier/prettier */
 import { Test, TestingModule } from '@nestjs/testing';
 import { PlacesService } from './places.service';
 
 describe('PlacesService', () => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   let service: PlacesService;
 
   beforeEach(async () => {
@@ -14,6 +12,7 @@ describe('PlacesService', () => {
     service = module.get<PlacesService>(PlacesService);
   });
 
-  // it("should be defined", () => {
-  //   expect(service).toBeDefined();  });
+  it('should be defined', () => {
+    expect(service).toBeDefined();
+  });
 });

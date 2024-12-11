@@ -1,8 +1,7 @@
-/* eslint-disable prettier/prettier */
-import { Client as GoogleMapasClient } from '@googlemaps/google-maps-services-js';
 import { Module } from '@nestjs/common';
 import { PlacesController } from './places/places.controller';
 import { PlacesService } from './places/places.service';
+import { Client as GoogleMapsClient } from '@googlemaps/google-maps-services-js';
 import { DirectionsController } from './directions/directions.controller';
 import { DirectionsService } from './directions/directions.service';
 
@@ -11,11 +10,11 @@ import { DirectionsService } from './directions/directions.service';
   providers: [
     PlacesService,
     {
-      provide: GoogleMapasClient,
-      useValue: new GoogleMapasClient(),
+      provide: GoogleMapsClient,
+      useValue: new GoogleMapsClient(),
     },
     DirectionsService,
   ],
-  exports: [PlacesService,DirectionsService],
+  exports: [DirectionsService],
 })
 export class MapsModule {}

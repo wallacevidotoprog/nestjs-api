@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { Controller, Get, Query } from '@nestjs/common';
 import { DirectionsService } from './directions.service';
 
