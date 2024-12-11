@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
-import { Test, TestingModule } from "@nestjs/testing";
-import { PlacesService } from "./places.service";
+import { Test, TestingModule } from '@nestjs/testing';
+import { PlacesService } from './places.service';
 
-describe("PlacesService", () => {
+describe('PlacesService', () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   let service: PlacesService;
 
